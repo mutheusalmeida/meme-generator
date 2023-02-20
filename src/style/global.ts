@@ -25,8 +25,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    font-family: 'Georgia', sans-serif;
-    color: #222;
+    font-family: 'Karla', sans-serif;
+    color: #fff;
   }
 
   img, picture, video, canvas, svg {

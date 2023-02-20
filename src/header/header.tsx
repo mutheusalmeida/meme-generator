@@ -6,10 +6,14 @@ export const Header = () => {
   return (
     <S.HeaderWrapper>
       <S.LogoWrapper>
-        <Logo />
+        <a href='/' title='Meme Generator'>
+          <Logo />
 
-        <h1>My travel journal.</h1>
+          <span>Meme Generator</span>
+        </a>
       </S.LogoWrapper>
+
+      <span>React Course - Project 3</span>
     </S.HeaderWrapper>
   )
 }
