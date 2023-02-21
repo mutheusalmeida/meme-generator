@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HeaderWrapper = styled.header`
   padding: 1.6666em;
-  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  background: var(--primary-gradient);
   display: flex;
   justify-content: space-between;
   align-items: center;

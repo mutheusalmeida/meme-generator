@@ -5,7 +5,8 @@ export const PlaygroundWrapper = styled.main`
 `
 
 export const ImgWrapper = styled.div`
-  width: 100%;
+  max-width: 29.8125em;
+  margin: 0 auto;
   aspect-ratio: 1.8 / 1;
   background-color: #efefef;
   border-radius: 2px;
