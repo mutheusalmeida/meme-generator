@@ -35,4 +35,5 @@ export const SendBtn = styled.button`
   color: inherit;
   border-radius: 0.3125em;
   border: none;
+  cursor: pointer;
 `
