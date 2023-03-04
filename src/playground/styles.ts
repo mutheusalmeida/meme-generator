@@ -14,4 +14,9 @@ export const ImgWrapper = styled.div`
   align-items: center;
   justify-content: center;
   color: #222;
+  position: relative;
+`
+
+export const Text = styled.h2`
+  color: #222;
 `

@@ -1,12 +1,20 @@
-import { bottomTextStr, topTextStr } from '@/resources/atom'
+import { memeObj } from '@/resources/atom'
 import { useAtom } from 'jotai'
 import { ChangeEvent, FormEvent } from 'react'
 
 import * as S from './styles'
 
 export const Form = () => {
-  const [topText, setTopText] = useAtom(topTextStr)
-  const [bottomText, setBottomText] = useAtom(bottomTextStr)
+  const [meme, setMeme] = useAtom(memeObj)
+
+  const handleFormChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+
+    setMeme(prev => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -18,15 +26,17 @@ export const Form = () => {
         <S.Input
           placeholder='Top text'
           type='text'
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setTopText(e.currentTarget.value)}
-          value={topText}
+          name='topText'
+          onChange={(handleFormChange)}
+          value={meme.topText}
         />
 
         <S.Input
           placeholder='Bottom text'
           type='text'
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setBottomText(e.currentTarget.value)}
-          value={bottomText}
+          name='bottomText'
+          onChange={handleFormChange}
+          value={meme.bottomText}
         />
       </S.InputsWrapper>
 
