@@ -12,9 +12,9 @@ export const Playground = () => {
       <Form />
 
       <S.ImgWrapper>
-        <S.Text>{meme.topText}</S.Text>
+        <S.Text pos='top'>{meme.topText}</S.Text>
 
-        <S.Text>{meme.bottomText}</S.Text>
+        <S.Text pos='bottom'>{meme.bottomText}</S.Text>
       </S.ImgWrapper>
     </S.PlaygroundWrapper>
   )
