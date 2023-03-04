@@ -53,3 +53,8 @@ export const Text = styled.h2<TextType>`
     bottom: 6%;
   `}
 `
+
+export const MemeImg = styled.img`
+  width: 100%;
+  object-fit: cover;
+`

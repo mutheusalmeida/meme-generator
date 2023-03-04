@@ -1,11 +1,12 @@
-import { memeObj } from '@/resources/atom'
-import { useAtom } from 'jotai'
+import { memeObj, memesArr } from '@/resources/atom'
+import { useAtom, useAtomValue } from 'jotai'
 import { ChangeEvent, FormEvent } from 'react'
 
 import * as S from './styles'
 
 export const Form = () => {
   const [meme, setMeme] = useAtom(memeObj)
+  const allMemes = useAtomValue(memesArr)
 
   const handleFormChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -18,6 +19,17 @@ export const Form = () => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    if (allMemes) {
+      const randomNum = Math.floor(Math.random() * allMemes.length)
+      const meme = allMemes[randomNum]
+
+      setMeme(prev => ({
+        ...prev,
+        url: meme.url,
+        name: meme.name,
+      }))
+    }
   }
 
   return (
